@@ -1,1 +1,257 @@
-/* You can add global styles to this file, and also import other style files */
+/* Fondo global (imagen proporcionada) y texto blanco */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #ffffff;
+  /* Imagen de fondo de librería antigua */
+  background-image: url("https://png.pngtree.com/background/20230527/original/pngtree-an-old-bookcase-in-a-library-picture-image_2760144.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Capa oscura sobre la imagen para mejorar legibilidad del texto */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Asegurar que el contenido de la aplicación esté por encima de la capa oscura */
+app-root, body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilos generales para botones */
+button {
+  color: #ffffff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Estilos para tarjetas y formularios con fondo semitransparente */
+.card-like {
+  background: rgba(0,0,0,0.5);
+  padding: 18px;
+  border-radius: 8px;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+/* Asegurar que todo el texto sea blanco para mejor contraste */
+p, label, span, h2, h3 {
+  color: #ffffff;
+}
+
+/* Variables de colores para toda la aplicación */
+:root {
+  --primary-color: #2D3250;
+  --secondary-color: #424769;
+  --accent-color: #7077A1;
+  --light-accent: #F6B17A;
+  --text-light: #ffffff;
+  --text-dark: #2D3250;
+  --error-color: #ff6b6b;
+  --success-color: #51cf66;
+  --background-overlay: rgba(45, 50, 80, 0.95);
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos del cuerpo principal */
+body {
+  background-image: url('https://png.pngtree.com/background/20230527/original/pngtree-an-old-bookcase-in-a-library-picture-image_2760144.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-light);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Asegurar legibilidad del texto en toda la aplicación */
+html, body {
+  color: #ffffff;
+}
+
+/* Estilos para controles de formulario en fondos oscuros */
+input, select, textarea, button {
+  color: #ffffff;
+}
+
+/* Todos los elementos de texto deben ser blancos */
+label, p, span, h1, h2, h3, h4, h5, h6, a {
+  color: #ffffff;
+}
+
+/* Estilos para controles de formulario */
+.form-control {
+  background: rgba(255,255,255,0.06) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+}
+
+/* Estilo para texto de placeholder */
+::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+/* Botones con alto contraste */
+button, .btn {
+  color: #ffffff;
+}
+
+/* Tarjetas para formularios y autenticación */
+.form-card, .auth-card {
+  background: var(--background-overlay);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Controles de formulario con transiciones */
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-light);
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Efecto focus para controles de formulario */
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--light-accent);
+  box-shadow: 0 0 0 2px rgba(246, 177, 122, 0.2);
+}
+
+/* Estilos base para botones */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botón primario - color de acento */
+.btn-primary {
+  background: var(--light-accent);
+  color: var(--text-dark);
+}
+
+/* Efecto hover para botón primario */
+.btn-primary:hover {
+  background: #e9a169;
+  transform: translateY(-1px);
+}
+
+/* Botón secundario */
+.btn-secondary {
+  background: var(--secondary-color);
+  color: var(--text-light);
+}
+
+/* Efecto hover para botón secundario */
+.btn-secondary:hover {
+  background: var(--accent-color);
+}
+
+/* Estado deshabilitado para botones */
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Estilos para títulos */
+h2 {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* Estilos para etiquetas de formulario */
+label {
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 500;
+}
+
+/* Alertas y mensajes de validación */
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Alerta de error/peligro */
+.alert-danger {
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid var(--error-color);
+  color: #ff8787;
+}
+
+/* Mensajes de error de formulario */
+.invalid-feedback {
+  color: #ff8787;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Iconos Font Awesome */
+.fas {
+  margin-right: 0.5rem;
+}
+
+/* Grid para mostrar listas de libros */
+.libros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Tarjetas individuales de libros */
+.libro-card {
+  background: var(--background-overlay);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Efecto hover para tarjetas de libros */
+.libro-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Diseño responsive para móviles */
+@media (max-width: 768px) {
+  .form-card, .auth-card {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .libros-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
