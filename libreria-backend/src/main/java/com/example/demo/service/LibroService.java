@@ -5,9 +5,11 @@ import com.example.demo.entity.Libro;
 import com.example.demo.repository.CategoriaRepository;
 import com.example.demo.repository.LibroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+@Service
 
 public class LibroService {
 
